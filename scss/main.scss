@@ -1,6 +1,46 @@
 $primary-color: #444;
+$secondary-color: #eece1a;
+
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}
 
 body {
-    background-color: $primary-color;
+   height: 100%;
+   margin: 0;
+   background: #c2e59c;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+// Work/Project
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.7rem;
+  
+    img {
+      width: 100%;
+      border: 3px #fff solid;
+  
+      &:hover {
+        opacity: 0.5;
+        border-color: $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
+
+#contact {
+    color: #fff;
+}
+
+.contact_info {
+    text-align: center;
+}
+
+footer {
+    padding: 0.5rem;
+    background-color: #444;
     color: #fff;
 }
